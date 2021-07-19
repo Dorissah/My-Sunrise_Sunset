@@ -1,0 +1,58 @@
+body { 
+			margin: 0;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+    
+    .world {
+    height: 100vh;
+}
+.skyline {
+	height: 100%;
+	background: rgb(100, 100, 100);
+	position: relative;
+	overflow: hidden;
+
+    animation: sun_dark 5s linear infinite;
+	animation-direction: alternate;
+}
+.sun {
+	position: absolute;
+	bottom: -15%;
+	left: calc(100vw - 50%);
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background: #FCF2C2;
+    box-shadow:
+    	0 0 60px 15px #F9F5D1,  /* inner white */
+    	0 0 60px 30px #F9F5D1,  /* inner white */
+    	0 0 100px 60px #fff, /* middle magenta */
+    	0 0 140px 240px #fff; /* outer cyan */
+
+
+      animation: sun_rise_set 5s linear infinite;
+	  animation-direction: alternate;
+
+
+        }
+
+        @keyframes sun_rise_set {
+		  100% {
+		    box-shadow:
+    			0 0 60px 15px #fff,  /* inner white */
+    			0 0 60px 30px #fff,  /* inner white */
+    			0 0 100px 60px #F9F5D1, /* middle magenta */
+    			0 0 140px 240px #F9F5D1; /* outer cyan */
+    		transform: scale(1.5);
+    		bottom: -10%;
+		  }
+        }
+
+     @keyframes sky_dark {
+         100% {
+             background: #68CBDD;
+         }
+        }
